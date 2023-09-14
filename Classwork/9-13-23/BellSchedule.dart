@@ -1,6 +1,6 @@
 import "dart:io";
 
-//this semes like an incredimly impractical way of solving this problem but it is part of the requirements
+//why why wh yw hwy hwy
 enum Period
 {
   One,
