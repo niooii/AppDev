@@ -9,7 +9,7 @@ out vec4 outcolor;
 
 const int STEPS = 128;
 const float HIT_DISTANCE = 0.001;
-const float MAX_DISTANCE = 256;
+const float MAX_DISTANCE = 512;
 const float REPEAT_FACTOR = 2.0;
 
 mat4 rotationFromAxis(vec3 axis, float angle) {
