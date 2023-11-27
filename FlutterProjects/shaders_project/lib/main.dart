@@ -1,10 +1,4 @@
-import 'dart:async';
-import 'dart:math';
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
-import 'package:flutter_shaders/flutter_shaders.dart';
-import 'package:shaders_project/vec3.dart';
 import 'package:shaders_project/sphere_torus_shader.dart';
 import 'package:shaders_project/sphere_infinite_shader.dart';
 
@@ -26,7 +20,7 @@ class MainApp extends StatelessWidget {
 
 class ShaderSwitcher extends StatefulWidget {
   ShaderSwitcher({super.key}) {
-    shader = SphereTorusShader();
+    shader = const SphereTorusShader();
   }
 
   late Widget shader;
@@ -42,7 +36,7 @@ class _ShaderSwitcherState extends State<ShaderSwitcher> {
       child: widget.shader,
       onDoubleTap: () {
         setState(() {
-          widget.shader = widget.shader is SphereTorusShader ? SphereInfiniteShader() : SphereTorusShader();
+          widget.shader = widget.shader is SphereTorusShader ? const SphereInfiniteShader() : const SphereTorusShader();
         });
       },
     );

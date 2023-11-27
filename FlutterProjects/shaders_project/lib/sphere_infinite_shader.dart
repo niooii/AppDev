@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 import 'dart:async';
-import 'dart:math';
 import 'dart:ui';
-
-import 'package:flutter_shaders/flutter_shaders.dart';
 
 import 'package:shaders_project/vec3.dart';
 
@@ -61,9 +58,11 @@ class _SphereInfiniteShaderState extends State<SphereInfiniteShader> {
               rot.z += details.delta.dy/400;
               rot.y += -details.delta.dx/400;
               // update travel direction
-              travel_dir = vec3(0.0, 0.0, 0.01).rotate(vec3(rot.x, 
+              travel_dir = vec3(0.0, 0.0, 0.01).rotate(vec3(rot.z, 
               rot.y, 
-              rot.z));
+              rot.x));
+
+              print("${rot.y}, ${rot.z}");
 
             },
             
@@ -106,6 +105,6 @@ class ShaderPainter extends CustomPainter {
   }
 
   @override
-  bool shouldRepaint(covariant CustomPainter oldDelegate) => true;
+  bool shouldRepaint(CustomPainter oldDelegate) => true;
 }
 

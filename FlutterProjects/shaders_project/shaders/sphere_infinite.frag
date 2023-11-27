@@ -10,6 +10,7 @@ out vec4 outcolor;
 const int STEPS = 128;
 const float HIT_DISTANCE = 0.001;
 const float MAX_DISTANCE = 256;
+const float REPEAT_FACTOR = 2.0;
 
 mat4 rotationFromAxis(vec3 axis, float angle) {
     axis = normalize(axis);
@@ -92,7 +93,7 @@ float shade(vec3 position, vec3 lightPosition, vec3 cameraPosition, float ambien
 
 vec3 wrapSpace(vec3 p)
 {
-    return mod(p, 1.0);
+    return mod(p, REPEAT_FACTOR);
 }
 
 // space wrapping stuff i forgot
@@ -107,17 +108,17 @@ float unitSpaceDistance(vec3 position, vec3 rayDirection)
     if (rayDirection.x < 0.0)
         dx = position.x;
     else
-        dx = 1.0 - position.x;
+        dx = REPEAT_FACTOR - position.x;
         
     if (rayDirection.y < 0.0)
         dy = position.y;
     else
-        dy = 1.0 - position.y;
+        dy = REPEAT_FACTOR - position.y;
         
     if (rayDirection.z < 0.0)
         dz = position.z;
     else
-        dz = 1.0 - position.z;
+        dz = REPEAT_FACTOR - position.z;
         
     return min(min(dx, dy), dz);        
 }
