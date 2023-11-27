@@ -21,4 +21,5 @@ flutter:
   shaders:
      - shaders/sphere_torus.frag
      - shaders/red.frag
+     - shaders/sphere_infinite.frag
   # uses-material-design: true
