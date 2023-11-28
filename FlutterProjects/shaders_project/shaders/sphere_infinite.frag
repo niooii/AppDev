@@ -163,7 +163,7 @@ float rayMarchUnit(vec3 ro, vec3 rd)
 }
 
 vec3 render(vec2 uv) {
-    // start off with white
+    // start off with           
     vec3 col = vec3(0.0);
     vec3 ro = cameraPos;
     vec3 rd = vec3(uv, 1.0) * rotation(rot.x, rot.y, rot.z);

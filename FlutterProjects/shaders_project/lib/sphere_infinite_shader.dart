@@ -60,7 +60,7 @@ class _SphereInfiniteShaderState extends State<SphereInfiniteShader> {
             // onLongPressMoveUpdate: (_) {
             //   setState(() {
             //     movespeed += 0.01;
-            //   });
+            //   });*
             // },
             onPanUpdate: (details) {
               rot.z += details.delta.dy/400;
